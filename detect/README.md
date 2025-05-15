@@ -11,8 +11,8 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 |--------------------|------|
 | `detect.py`        | YOLOv5 실시간 감지 및 아두이노로 좌표 전송 |
 | `results.png`      | 학습 시 precision, recall, mAP, loss 등 epoch별 변화 그래프 |
-| `F1_curve.png`     | 개선전  confidence-F1 곡선 |
-| `F1_curve (1).png` | 개선 후 confidence-F1 곡선 |
+| `F1_curve.png`     | 단일 클래스(line) 기준 confidence-F1 곡선 |
+| `F1_curve (1).png` | 다중 클래스 기준 confidence-F1 곡선 (성능 하락 모델) |
 
 ---
 
@@ -25,22 +25,20 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 | `F1 score`        | 0.89 @ 0.418          | 0.99 @ 0.455            |
 | `train/cls_loss`  | 0.05 이하              | 0                       |
 
-### F1 Score 비교
 
 #### 개선 전
-![Multi-class F1](./F1_curve\(1\).png)
+![Multi-class F1](./F1_curve_old.png)
 
 #### 개선 후
-![Single-class F1](./F1_curve\(2\).png)
+![Single-class F1](./F1_curve_new.png)
 
 ### 학습 그래프 비교
 
 #### 개선 전
-![Multi-class Loss](./results\(1\).png)
+![Multi-class Loss](./results_old.png)
 
 #### 개선 후
-![Single-class Loss](./results\(2\).png)
-
+![Single-class Loss](./results_new.png)
 ---
 
 ## 사용법
