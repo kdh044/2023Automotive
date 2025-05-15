@@ -27,19 +27,17 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 
 
 #### 개선 전
-![Multi-class F1](./F1_curve_old.png)
-
-#### 개선 후
-![Single-class F1](./F1_curve_new.png)
-
+<p align="center">
+  <img src="./F1_curve_old.png" alt="Multi-class F1" width="45%">
+  <img src="./F1_curve_new.png" alt="Single-class F1" width="45%">
+</p>
 ### 학습 그래프 비교
 
 #### 개선 전
-![Multi-class Loss](./results_old.png)
-
-#### 개선 후
-![Single-class Loss](./results_new.png)
----
+<p align="center">
+  <img src="./F1_curve_old.png" alt="Multi-class F1" width="45%">
+  <img src="./F1_curve_new.png" alt="Single-class F1" width="45%">
+</p>
 
 ## 사용법
 
