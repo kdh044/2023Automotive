@@ -1,52 +1,23 @@
-# detect 디렉토리 소개 (YOLOv5 기반 차선 인식)
+# 2023 자율주행 SW 경진대회 프로젝트 (Team S.W.B)
 
-`detect/` 폴더는 자율주행 차량에서 **차선 인식**을 위한 YOLOv5 기반 객체 감지 모델과 실행 코드를 포함하고 있습니다.  
-PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 감지하고 **중심 좌표를 계산하여 아두이노로 전송**하는 구조입니다.
-
----
-
-## 구성 파일
-
-| 파일명              | 설명 |
-|--------------------|------|
-| `detect.py`        | YOLOv5 실시간 감지 및 아두이노로 좌표 전송 |
-| `F1_curve_old.png` | 다중 클래스 기준 confidence-F1 곡선 |
-| `F1_curve_new.png` | 단일 클래스(line) 기준 confidence-F1 곡선 |
-| `results_old.png`  | 다중 클래스 학습 그래프 |
-| `results_new.png`  | 단일 클래스 학습 그래프 |
-
----
-
-## 성능 비교 (개선 전후)
-
-| 항목              | 개선 전                   | 개선 후                 |
-|-------------------|---------------------------|--------------------------|
-| `mAP@0.5`         | 약 0.89                   | 약 0.95 이상             |
-| `mAP@0.5:0.95`    | 약 0.80                   | 약 0.85 이상             |
-| `F1 score`        | 0.89 @ 0.418              | 0.99 @ 0.455             |
-| `train/cls_loss`  | 0.05 이하                 | 0                        |
-
----
-
-### F1 Score 비교
+> 전북대학교 자율주행 팀이 제작한 미니 자율주행 차량 기반 프로젝트입니다.
 
 <p align="center">
-  <img src="./F1_curve_old.png" alt="Multi-class F1" width="45%">
-  <img src="./F1_curve_new.png" alt="Single-class F1" width="45%">
+  <img src="./car.jpg" alt="자율주행 차량" width="600"/>
 </p>
 
-### 학습 그래프 비교
-
-<p align="center">
-  <img src="./results_old.png" alt="Multi-class Loss" width="45%">
-  <img src="./results_new.png" alt="Single-class Loss" width="45%">
-</p>
+본 프로젝트는 2023 자율주행 SW 경진대회 참가를 위해 설계 및 제작한 자율주행 차량 시스템입니다.  
+카메라, 초음파 센서, 아두이노를 활용하여 고속 주행, 차선 인식, 장애물 회피, 주차 등을 수행합니다.
 
 ---
 
-## 사용법
+##  디렉토리 구조
 
-다음 명령어로 실시간 감지를 실행할 수 있습니다:
+- `control/` : 아두이노 기반 차량 제어 코드 (핸들, 속도, 회피, 주차 등)
+- `detect/` : YOLOv5 기반 딥러닝 인식 모델 및 감지 실행 코드
+- `README.md` : 본 문서
 
-```bash
-python detect.py --weights ./runs/train/weights/best.pt --conf 0.45 --source 0
+---
+
+자세한 내용은 각 디렉토리의 `README.md`를 참고해주세요.
+
