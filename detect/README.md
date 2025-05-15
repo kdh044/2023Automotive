@@ -10,10 +10,10 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 | 파일명              | 설명 |
 |--------------------|------|
 | `detect.py`        | YOLOv5 실시간 감지 및 아두이노로 좌표 전송 |
-| `F1_curve_old.png` | 다중 클래스 기준 confidence-F1 곡선 |
-| `F1_curve_new.png` | 단일 클래스(line) 기준 confidence-F1 곡선 |
-| `results_old.png`  | 다중 클래스 학습 그래프 |
-| `results_new.png`  | 단일 클래스 학습 그래프 |
+| `F1_curve_old.png` | 개선 전  confidence-F1 곡선 |
+| `F1_curve_new.png` | 개선 후(line) 기준 confidence-F1 곡선 |
+| `results_old.png`  | 개선 전 학습 그래프 |
+| `results_new.png`  | 개선 후 학습 그래프 |
 
 ---
 
