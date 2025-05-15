@@ -10,34 +10,39 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 | 파일명              | 설명 |
 |--------------------|------|
 | `detect.py`        | YOLOv5 실시간 감지 및 아두이노로 좌표 전송 |
-| `results.png`      | 학습 시 precision, recall, mAP, loss 등 epoch별 변화 그래프 |
-| `F1_curve.png`     | 단일 클래스(line) 기준 confidence-F1 곡선 |
-| `F1_curve (1).png` | 다중 클래스 기준 confidence-F1 곡선 (성능 하락 모델) |
+| `F1_curve_old.png` | 다중 클래스 기준 confidence-F1 곡선 |
+| `F1_curve_new.png` | 단일 클래스(line) 기준 confidence-F1 곡선 |
+| `results_old.png`  | 다중 클래스 학습 그래프 |
+| `results_new.png`  | 단일 클래스 학습 그래프 |
 
 ---
 
 ## 성능 비교 (개선 전후)
 
-| 항목              | 개선 전                   | 개선 후  |
-|-------------------|------------------------|------------------------|
-| `mAP@0.5`         | 약 0.89                | 약 0.95 이상             |
-| `mAP@0.5:0.95`    | 약 0.80                | 약 0.85 이상             |
-| `F1 score`        | 0.89 @ 0.418          | 0.99 @ 0.455            |
-| `train/cls_loss`  | 0.05 이하              | 0                       |
+| 항목              | 개선 전                   | 개선 후                 |
+|-------------------|---------------------------|--------------------------|
+| `mAP@0.5`         | 약 0.89                   | 약 0.95 이상             |
+| `mAP@0.5:0.95`    | 약 0.80                   | 약 0.85 이상             |
+| `F1 score`        | 0.89 @ 0.418              | 0.99 @ 0.455             |
+| `train/cls_loss`  | 0.05 이하                 | 0                        |
 
+---
 
-#### 개선 전
+### F1 Score 비교
+
 <p align="center">
   <img src="./F1_curve_old.png" alt="Multi-class F1" width="45%">
   <img src="./F1_curve_new.png" alt="Single-class F1" width="45%">
 </p>
+
 ### 학습 그래프 비교
 
-#### 개선 전
 <p align="center">
-  <img src="./F1_curve_old.png" alt="Multi-class F1" width="45%">
-  <img src="./F1_curve_new.png" alt="Single-class F1" width="45%">
+  <img src="./results_old.png" alt="Multi-class Loss" width="45%">
+  <img src="./results_new.png" alt="Single-class Loss" width="45%">
 </p>
+
+---
 
 ## 사용법
 
@@ -45,3 +50,4 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 
 ```bash
 python detect.py --weights ./runs/train/weights/best.pt --conf 0.45 --source 0
+
