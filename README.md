@@ -25,22 +25,20 @@ PyTorch 기반 YOLOv5 모델을 학습한 후, 카메라로 실시간 차선을 
 | `F1 score`        | 0.89 @ 0.418          | 0.99 @ 0.455            |
 | `train/cls_loss`  | 0.05 이하              | 0                       |
 
-### F1 Score 비교
 
-#### 다중 클래스
-![Multi-class F1](./F1_curve\ \(1\).png)
+#### 개선 전
+![Multi-class F1](./F1_curve_old.png)
 
-#### 단일 클래스 (line)
-![Single-class F1](./F1_curve.png)
+#### 개선 후
+![Single-class F1](./F1_curve_new.png)
 
 ### 학습 그래프 비교
 
-#### 다중 클래스
-![Multi-class Loss](./results\(1\).png)
+#### 개선 전
+![Multi-class Loss](./results_old.png)
 
-#### 단일 클래스
-![Single-class Loss](./results.png)
-
+#### 개선 후
+![Single-class Loss](./results_new.png)
 ---
 
 ## 사용법
